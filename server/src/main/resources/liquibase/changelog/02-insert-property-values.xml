@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="01-create-properties-h2" author="lie zeilstra" context="jdbc">
+        <sql>
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'app.name', '@project.artifactId@');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'app.version', '@project.version@');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'server.port', '8080');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'server.servlet.context-path', '/config-client');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'logging.level.ROOT', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'logging.level.org.springframework', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'logging.level.org.boip.demo.configServer.client', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'management.endpoint.logfile.external-file', '/var/log/cfgserver/configserver.log');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'management.endpoints.web.exposure.include', '*');
+
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'spring.profiles.include', 'default');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'app.message', '{cipher}ae56e871554700ec7b8c6d13ba9628f3a3e0fe31653f59a31833cf4a181c3954');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'server.port', '9080');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'logging.level.ROOT', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'logging.level.org.springframework', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'logging.level.org.boip.demo.configServer.client', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'management.endpoint.logfile.external-file', 'logs/client.log');
+
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'test', 'master', 'spring.profiles.include', 'default');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'test', 'master', 'app.message', 'This is Test');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'test', 'master', 'server.port', '9090');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'test', 'master', 'logging.level.ROOT', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'test', 'master', 'logging.level.org.springframework', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'test', 'master', 'logging.level.org.boip.demo.configServer.client', 'INFO');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'test', 'master', 'management.endpoint.logfile.external-file', 'logs/client.log');
+        </sql>
+
+    </changeSet>
+</databaseChangeLog>
