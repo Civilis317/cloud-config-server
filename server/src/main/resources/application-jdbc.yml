@@ -32,8 +32,3 @@ spring:
         jdbc:
           sql: "select key, value from properties where application=? and profile=? and label=?"
           order: 1
-
-# moved encrypt property to bootstrap.yml, seems to be an known issue
-#encrypt:
-#  key: "e46b46cf-3ec5-4dee-943b-8fa4a69b62f6"
-

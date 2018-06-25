@@ -19,7 +19,7 @@
             insert into properties (application, profile, label, key, value) values('configserver-client', 'default', 'master', 'management.endpoints.web.exposure.include', '*');
 
             insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'spring.profiles.include', 'default');
-            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'app.message', '{cipher}ae56e871554700ec7b8c6d13ba9628f3a3e0fe31653f59a31833cf4a181c3954');
+            insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'app.message', 'This is Local!');
             insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'server.port', '9080');
             insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'logging.level.ROOT', 'INFO');
             insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'logging.level.org.springframework', 'INFO');
