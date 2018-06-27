@@ -1,0 +1,21 @@
+update script
+
+update properties p
+set p.value = 'value'
+where p.application = 'application'
+and p.profile = 'default'
+and p.label = 'master'
+;
+
+
+copy unlimited cryptography into docker container
+
+FROM alpine:edge
+MAINTAINER baeldung.com
+RUN apk add --no-cache openjdk8
+COPY files/UnlimitedJCEPolicyJDK8/* \
+  /usr/lib/jvm/java-1.8-openjdk/jre/lib/security/
+
+docker build --tag=alpine-java:base --rm=true .
+
+NOTICE: The –tag option will give the image its name and –rm=true will remove intermediate images after it has been built successfully.
