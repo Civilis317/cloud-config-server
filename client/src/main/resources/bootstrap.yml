@@ -8,3 +8,10 @@ spring:
       username: "config"
       password: "welcome1"
       fail-fast: true
+
+encrypt:
+  key-store:
+    location: "classpath:/config-client.jks"
+    password: "welcome1"
+    alias: "client1"
+    secret: "welcome1"
