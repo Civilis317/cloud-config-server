@@ -7,6 +7,4 @@ spring:
       uri: "http://localhost:8888/configserver"
       username: "config"
       password: "welcome1"
-
-encrypt:
-  key: "e46b46cf-3ec5-4dee-943b-8fa4a69b62f6"
+      fail-fast: true

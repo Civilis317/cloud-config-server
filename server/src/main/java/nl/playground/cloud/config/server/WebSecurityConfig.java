@@ -19,5 +19,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/h2-console/**");
         web.ignoring().antMatchers("/encrypt/**");
         web.ignoring().antMatchers("/decrypt/**");
+        web.ignoring().antMatchers("/error/**");
     }
 }
