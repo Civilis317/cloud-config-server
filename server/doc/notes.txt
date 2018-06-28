@@ -30,7 +30,8 @@ keytool -genkeypair -alias client1 -keyalg RSA -keysize 4096 -sigalg SHA512withR
 
 
 2. encrypt a value:
-curl -X POST --data-urlencode "Message for Local Profile" http://localhost:8888/configserver/encrypt
+# curl -X POST --data-urlencode "Message for Local Profile" http://localhost:8888/configserver/encrypt
+curl -X POST --data-urlencode "Changed Message for Local Profile" --user config:welcome1 http://localhost:8888/configserver/encrypt
 result:
 AgA4bV9yRMD3fSLD4q8433FrLAkZlfFVKucIJeSlWXyyiiJg7WMJtnBJp9cvSr4olbatBJNh+o6KvHi6Jru2c6XRJsnTXzmPa8KqCfKB8APEcxsrtMx6oH2kETd14l/+2P8UPO/Cwg037yLBsGdiuB11TmEuKQP88tTSIO3ms8ZDYu9blP/VkBymb/oXlycREuGuqMNyxGnrNcyxniq8/8HwxhVnMAh1Lu51V77hYUym/h65U8r5yE0MC7Qdvcr1y3T+ucanwumZ1Sm3ORVTMlJbv9GE5rAwc5Jp0ZxZjAy4JmzxHg9S9zCa0fJbBvz09dh6/S9P67Q7u1aKqVhdjYdLx6KNXgo/3KpG42fMTRPFyYE4A4UeGT5eUpjHu/pLEq8HvkWtK3k6f0nzPO0Y9PcDa5ngx5QdAs38Baf0F0hJi+RFdCYku+kDeZwit7a7JqcPPc6cmclMRy48zyUpzfPrObyb9dJVPu00ddwuHQH5z/60KFwSYlPgkyNYTza54TJ5Rhc8TQOioX6T9/I+W4CuC3v3dh4jgs6vVlHBoAGfObFrIinjEHWexSyFkiphFWZTiAMZdwSEdH0L3HPN26c2kcm39lMLCb0+EbDwYrECHgx8Fab6r94LvRgH1P6oMlUWyGPgKEtWX7TLo7WqcDaNRcGJaHJZobR6ORx7ZHdC/hHW4DhJJjgiYOudl2WexFuoWry5OvW4Xi9Wr+VSfPraw0ww/xultMVU7MXsbh4WXw==
 insert in db:
@@ -40,7 +41,7 @@ insert into properties (application, profile, label, key, value) values('configs
 http://localhost:9080/config-client/message
 
 4. change the property value:
-curl -X POST --data-urlencode "Changed Message for Local Profile" http://localhost:8888/configserver/encrypt
+curl -X POST --data-urlencode "Changed Message for Local Profile" --user config:welcome1 http://localhost:8888/configserver/encrypt
 AgA3NVE2Dp0a4ujuXmxbITDSRrCWDLE70B/f0NWelb7/mLvjOtYmB9stAbF3rrLXyAz7hejED36Qt3tGJwVcZk+BecAF5dq5Y5/qckXOqo06F0E6uSmgpF+S6+xuq7BQvpBc7U6IYg1eEQDwb3Beoa4vheFBw6gilC86kKUSOXuArD1FchP+xuYqfrnjjKwcAokVnMQbEcUhs8gFKz/Jz2JMqzR9FWuvM5Wisf/9MFfiolUwdAkNjeaUQMHgXwVdDTDwcE44b9F+2ZTDa55KdlxbVWA+33q4Hs67xwszva75XVC/Cb9Q3yyfBLRj4p9nnX2Zk186jjneLCYtyGOCi9QbA9UwBGTMRfQ0fyg3KC4YbOiKVEvBTgMFP8//t1MZF+YSMwd8V3/kaWkIsHYZCmzkWHeL7Lbw5VIK/Hxr6OT2pv8n8OMdyJ73XfVQGvDtdXKlS57F8DhSiK91AzQRdQ5VlKeW7Y+7Qomo6iBV7xbnx7lvG/M5wTy2GhIHXUqxP2KuIDO94Br0sir5iJ4DcBFynWCX/+OXO/J+0PhwgfMgeumNxamx0UIVceeeeWPKOUbNMqXbCJbmEKZhb0yoN0Px0lYxQd3EQFvWSqnOvB8COM9w0TvPXJTbmXG9UCHcCW5RTPO+r6iq8jxW35v1oDeVfQJHpqYwhZl504vZnR8R6XCTSmBOzx5M+zYmEGqNt1f1Lc6X6x0hTsuue4uqFqjZPmYPaShmO8qWtsNrpo6hGDbF0wvVPH9M/IZS5KiaSwM=
 
 
