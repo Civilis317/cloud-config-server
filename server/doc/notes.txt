@@ -98,7 +98,3 @@ openssl pkcs12 -export -in client1_public_key.cer -out client1.p12 -name client1
 Step 4 old
 Import the client public key into the server keystore
 keytool -import -noprompt -alias configserver-client1-key -keypass welcome1 -keystore config-server.jks -storepass welcome1 -file client1_public_key.cer
-
-encrypt a value:
-curl -X POST --data-urlencode "Message for Local Profile" http://localhost:8888/configserver/encrypt
-curl -X POST --data-urlencode "Message for Local Profile" http://localhost:8888/configserver/encrypt
