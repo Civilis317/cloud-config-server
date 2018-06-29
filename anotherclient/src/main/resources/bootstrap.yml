@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      name: "anotherClient"
+      profile: "local"
+      label: "master"
+      uri: "http://localhost:8888/configserver"
+      username: "config"
+      password: "welcome1"
+      fail-fast: true
+
+encrypt:
+  key-store:
+    location: "classpath:/config-client2.jks"
+    password: "welcome1"
+    alias: "client2"
+    secret: "welcome1"

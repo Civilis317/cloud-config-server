@@ -9,5 +9,5 @@ encrypt:
   key-store:
     location: "classpath:/config-server.jks"
     password: "welcome1"
-    alias: "client1"
+    alias: "default"
     secret: "welcome1"
