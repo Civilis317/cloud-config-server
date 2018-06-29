@@ -63,7 +63,7 @@ But with the private key the server (and anyone gaining acces to it) is able to 
 \
 I have tried to use a server keystore containing only the trusted certificate and public key of the client.  
 However the standard `/encrypt` endpoint uses the `getKeyPair(..)` method of `org.springframework.security.rsa.crypto.KeyStoreKeyFactory`.  
-In this method the private key is used to get at the public key:  
+In this method **the private key is used to get at the public key**:  
 `RSAPrivateCrtKey key = (RSAPrivateCrtKey)this.store.getKey(alias, password); `   
 `RSAPublicKeySpec spec = new RSAPublicKeySpec(key.getModulus(), key.getPublicExponent()); `   
 If key == null, as is the case when no private key is present this ends in disaster (an NPE).  
@@ -72,11 +72,11 @@ A possible solution to implement a custom /encrypt endpoint.
 \
 **2**: _The server keystore contains a default key pair, not related to any client_.  
 This too is necessary because of a quirk (imho) of the `/encrypt` endpoint implementation.  
-When requesting an encrypted value the key to use is indicated, eg {key:client}.  
-However prior to actually encrypting the Spring code checks if a keystore and key pair is available 
+When requesting an encrypted value the key to use is indicated, eg {key:client1}.  
+However prior to actually encrypting the Spring code checks if a keystore and key pair are available 
 by retrieving the key that is configured in the bootstrap.yml configuration file.  
 Check out `org.springframework.cloud.config.server.encryption.EncryptionController.encrypt(..)`  
-The line `this.checkEncryptorInstalled(name, profiles);` uses the default configured alias to check if a key pair can be retrieved from the keystore.  
+The line `this.checkEncryptorInstalled(name, profiles);` **uses the default configured alias to check if a key pair can be retrieved** from the keystore.  
 If this succeeds, the message is parsed for an indicated key and then that key is retrieved from the keystore and used.  
 Why not try to get the indicated key right away?
 
