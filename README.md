@@ -22,10 +22,10 @@ Steps to achieve the setup:\
 \
 \
 **Obtain client-specific encrypted values from the /encrypt endpoint at the server**:\
-`curl -X POST --data-urlencode "{key:client1}Message for Local Profile of Client #1" --user config:welcome1 http://localhost:8888/configserver/encrypt`
+`curl -X POST --data-urlencode "{key:client1}Message for Local Profile of Client #1" --user config:welcome1 http://localhost:8888/configserver/encrypt`  
 _{key:client1}AgBfFvD7Yyv2pE7H...MORYsRNKQ8ixnFg=_
 \
-`curl -X POST --data-urlencode "{key:client2}Message for Local Profile of Client #2" --user config:welcome1 http://localhost:8888/configserver/encrypt`
+`curl -X POST --data-urlencode "{key:client2}Message for Local Profile of Client #2" --user config:welcome1 http://localhost:8888/configserver/encrypt`  
 _{key:client2}AgCU3gtR...GHXdQnH3PtHPzo=_
 \
 
