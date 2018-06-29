@@ -64,7 +64,7 @@ But with the private key the server (and anyone gaining acces to it) is able to 
 I have tried to use a server keystore containing only the trusted certificate and public key of the client.  
 However the standard `/encrypt` endpoint uses the `getKeyPair(..)` method of `org.springframework.security.rsa.crypto.KeyStoreKeyFactory`.  
 In this method the private key is used to get at the public key:  
-`RSAPrivateCrtKey key = (RSAPrivateCrtKey)this.store.getKey(alias, password); ` 
+`RSAPrivateCrtKey key = (RSAPrivateCrtKey)this.store.getKey(alias, password); `   
 `RSAPublicKeySpec spec = new RSAPublicKeySpec(key.getModulus(), key.getPublicExponent()); `   
 If key == null, as is the case when no private key is present this ends in disaster (an NPE).  
 A possible solution to implement a custom /encrypt endpoint.
