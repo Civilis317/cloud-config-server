@@ -35,10 +35,10 @@ curl -X POST --data-urlencode "Changed Message for Local Profile" --user config:
 result:
 AgA4bV9yRMD3fSLD4q8433FrLAkZlfFVKucIJeSlWXyyiiJg7WMJtnBJp9cvSr4olbatBJNh+o6KvHi6Jru2c6XRJsnTXzmPa8KqCfKB8APEcxsrtMx6oH2kETd14l/+2P8UPO/Cwg037yLBsGdiuB11TmEuKQP88tTSIO3ms8ZDYu9blP/VkBymb/oXlycREuGuqMNyxGnrNcyxniq8/8HwxhVnMAh1Lu51V77hYUym/h65U8r5yE0MC7Qdvcr1y3T+ucanwumZ1Sm3ORVTMlJbv9GE5rAwc5Jp0ZxZjAy4JmzxHg9S9zCa0fJbBvz09dh6/S9P67Q7u1aKqVhdjYdLx6KNXgo/3KpG42fMTRPFyYE4A4UeGT5eUpjHu/pLEq8HvkWtK3k6f0nzPO0Y9PcDa5ngx5QdAs38Baf0F0hJi+RFdCYku+kDeZwit7a7JqcPPc6cmclMRy48zyUpzfPrObyb9dJVPu00ddwuHQH5z/60KFwSYlPgkyNYTza54TJ5Rhc8TQOioX6T9/I+W4CuC3v3dh4jgs6vVlHBoAGfObFrIinjEHWexSyFkiphFWZTiAMZdwSEdH0L3HPN26c2kcm39lMLCb0+EbDwYrECHgx8Fab6r94LvRgH1P6oMlUWyGPgKEtWX7TLo7WqcDaNRcGJaHJZobR6ORx7ZHdC/hHW4DhJJjgiYOudl2WexFuoWry5OvW4Xi9Wr+VSfPraw0ww/xultMVU7MXsbh4WXw==
 insert in db:
-insert into properties (application, profile, label, key, value) values('configserver-clientEntity', 'local', 'master', 'app.message', '{cipher}AgA4bV9yRMD3fSLD4q8433FrLAkZlfFVKucIJeSlWXyyiiJg7WMJtnBJp9cvSr4olbatBJNh+o6KvHi6Jru2c6XRJsnTXzmPa8KqCfKB8APEcxsrtMx6oH2kETd14l/+2P8UPO/Cwg037yLBsGdiuB11TmEuKQP88tTSIO3ms8ZDYu9blP/VkBymb/oXlycREuGuqMNyxGnrNcyxniq8/8HwxhVnMAh1Lu51V77hYUym/h65U8r5yE0MC7Qdvcr1y3T+ucanwumZ1Sm3ORVTMlJbv9GE5rAwc5Jp0ZxZjAy4JmzxHg9S9zCa0fJbBvz09dh6/S9P67Q7u1aKqVhdjYdLx6KNXgo/3KpG42fMTRPFyYE4A4UeGT5eUpjHu/pLEq8HvkWtK3k6f0nzPO0Y9PcDa5ngx5QdAs38Baf0F0hJi+RFdCYku+kDeZwit7a7JqcPPc6cmclMRy48zyUpzfPrObyb9dJVPu00ddwuHQH5z/60KFwSYlPgkyNYTza54TJ5Rhc8TQOioX6T9/I+W4CuC3v3dh4jgs6vVlHBoAGfObFrIinjEHWexSyFkiphFWZTiAMZdwSEdH0L3HPN26c2kcm39lMLCb0+EbDwYrECHgx8Fab6r94LvRgH1P6oMlUWyGPgKEtWX7TLo7WqcDaNRcGJaHJZobR6ORx7ZHdC/hHW4DhJJjgiYOudl2WexFuoWry5OvW4Xi9Wr+VSfPraw0ww/xultMVU7MXsbh4WXw==');
+insert into properties (application, profile, label, key, value) values('configserver-client', 'local', 'master', 'app.message', '{cipher}AgA4bV9yRMD3fSLD4q8433FrLAkZlfFVKucIJeSlWXyyiiJg7WMJtnBJp9cvSr4olbatBJNh+o6KvHi6Jru2c6XRJsnTXzmPa8KqCfKB8APEcxsrtMx6oH2kETd14l/+2P8UPO/Cwg037yLBsGdiuB11TmEuKQP88tTSIO3ms8ZDYu9blP/VkBymb/oXlycREuGuqMNyxGnrNcyxniq8/8HwxhVnMAh1Lu51V77hYUym/h65U8r5yE0MC7Qdvcr1y3T+ucanwumZ1Sm3ORVTMlJbv9GE5rAwc5Jp0ZxZjAy4JmzxHg9S9zCa0fJbBvz09dh6/S9P67Q7u1aKqVhdjYdLx6KNXgo/3KpG42fMTRPFyYE4A4UeGT5eUpjHu/pLEq8HvkWtK3k6f0nzPO0Y9PcDa5ngx5QdAs38Baf0F0hJi+RFdCYku+kDeZwit7a7JqcPPc6cmclMRy48zyUpzfPrObyb9dJVPu00ddwuHQH5z/60KFwSYlPgkyNYTza54TJ5Rhc8TQOioX6T9/I+W4CuC3v3dh4jgs6vVlHBoAGfObFrIinjEHWexSyFkiphFWZTiAMZdwSEdH0L3HPN26c2kcm39lMLCb0+EbDwYrECHgx8Fab6r94LvRgH1P6oMlUWyGPgKEtWX7TLo7WqcDaNRcGJaHJZobR6ORx7ZHdC/hHW4DhJJjgiYOudl2WexFuoWry5OvW4Xi9Wr+VSfPraw0ww/xultMVU7MXsbh4WXw==');
 
 3. check that clientEntity shows "Message for Local Profile" in response to
-http://localhost:9080/config-clientEntity/message
+http://localhost:9080/config-client/message
 
 4. change the property value:
 curl -X POST --data-urlencode "Changed Message for Local Profile" --user config:welcome1 http://localhost:8888/configserver/encrypt
@@ -49,16 +49,16 @@ Update ther databse via h2-console:
 
 update properties
 set value = '{cipher}AgA3NVE2Dp0a4ujuXmxbITDSRrCWDLE70B/f0NWelb7/mLvjOtYmB9stAbF3rrLXyAz7hejED36Qt3tGJwVcZk+BecAF5dq5Y5/qckXOqo06F0E6uSmgpF+S6+xuq7BQvpBc7U6IYg1eEQDwb3Beoa4vheFBw6gilC86kKUSOXuArD1FchP+xuYqfrnjjKwcAokVnMQbEcUhs8gFKz/Jz2JMqzR9FWuvM5Wisf/9MFfiolUwdAkNjeaUQMHgXwVdDTDwcE44b9F+2ZTDa55KdlxbVWA+33q4Hs67xwszva75XVC/Cb9Q3yyfBLRj4p9nnX2Zk186jjneLCYtyGOCi9QbA9UwBGTMRfQ0fyg3KC4YbOiKVEvBTgMFP8//t1MZF+YSMwd8V3/kaWkIsHYZCmzkWHeL7Lbw5VIK/Hxr6OT2pv8n8OMdyJ73XfVQGvDtdXKlS57F8DhSiK91AzQRdQ5VlKeW7Y+7Qomo6iBV7xbnx7lvG/M5wTy2GhIHXUqxP2KuIDO94Br0sir5iJ4DcBFynWCX/+OXO/J+0PhwgfMgeumNxamx0UIVceeeeWPKOUbNMqXbCJbmEKZhb0yoN0Px0lYxQd3EQFvWSqnOvB8COM9w0TvPXJTbmXG9UCHcCW5RTPO+r6iq8jxW35v1oDeVfQJHpqYwhZl504vZnR8R6XCTSmBOzx5M+zYmEGqNt1f1Lc6X6x0hTsuue4uqFqjZPmYPaShmO8qWtsNrpo6hGDbF0wvVPH9M/IZS5KiaSwM='
-where application = 'configserver-clientEntity'
+where application = 'configserver-client'
 and profile = 'local'
 and label = 'master'
 and key = 'app.message';
 
 refresh clientEntity spring-application context:
-curl localhost:9080/config-clientEntity/actuator/refresh -d {} -H "Content-Type: application/json"
+curl localhost:9080/config-client/actuator/refresh -d {} -H "Content-Type: application/json"
 
 now refresh page for
-http://localhost:9080/config-clientEntity/message
+http://localhost:9080/config-client/message
 should now show:
 "Changed Message for Local Profile"
 
@@ -98,3 +98,17 @@ openssl pkcs12 -export -in client1_public_key.cer -out client1.p12 -name client1
 Step 4 old
 Import the clientEntity public key into the server keystore
 keytool -import -noprompt -alias configserver-client1-key -keypass welcome1 -keystore config-server.jks -storepass welcome1 -file client1_public_key.cer
+
+
+====== 2018.07.01
+Create an empty keystore at the server:
+keytool -genkeypair -alias dummy -keyalg RSA -keysize 4096 -sigalg SHA512withRSA -dname 'CN=ConfigServer,OU=Server,O=keystore' -keypass welcome1 -keystore public-keys.jks -storepass welcome1
+keytool -delete -alias dummy -keystore public-keys.jks -storepass welcome1
+
+Export the public key from the client keystores
+keytool -export -alias client1 -keystore config-client.jks -storepass welcome1 -file client1.cer
+keytool -export -alias client2 -keystore config-client2.jks -storepass welcome1 -file client2.cer
+
+Import the client certificates into the server keystore
+keytool -import -noprompt -alias client1 -keypass welcome1 -keystore public-keys.jks -storepass welcome1 -file client1.cer
+keytool -import -noprompt -alias client2 -keypass welcome1 -keystore public-keys.jks -storepass welcome1 -file client2.cer

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="04-insert-client-data-h2" author="lie zeilstra" context="jdbc">
+        
+        <insert tableName="client">
+            <column name="id" valueComputed="(select clt_seq.nextval)"/>
+            <column name="name">configserver-client</column>
+            <column name="public_key_alias">client1</column>
+            <column name="public_key_pwd">welcome1</column>
+        </insert>
+
+        <insert tableName="client">
+            <column name="id" valueComputed="(select clt_seq.nextval)"/>
+            <column name="name">anotherClient</column>
+            <column name="public_key_alias">client2</column>
+            <column name="public_key_pwd">welcome1</column>
+        </insert>
+
+        <insert tableName="profile">
+            <column name="id" valueComputed="(select pfe_seq.nextval)"/>
+            <column name="clt_id" valueComputed="(SELECT id FROM client WHERE name = 'configserver-client')"/>
+            <column name="name">local</column>
+            <column name="url">http://localhost:9080/config-client/actuator/refresh</column>
+        </insert>
+
+        <insert tableName="profile">
+            <column name="id" valueComputed="(select pfe_seq.nextval)"/>
+            <column name="clt_id" valueComputed="(SELECT id FROM client WHERE name = 'configserver-client')"/>
+            <column name="name">test</column>
+            <column name="url">http://test.host.com:9080/config-client/actuator/refresh</column>
+        </insert>
+
+        <insert tableName="profile">
+            <column name="id" valueComputed="(select pfe_seq.nextval)"/>
+            <column name="clt_id" valueComputed="(SELECT id FROM client WHERE name = 'anotherClient')"/>
+            <column name="name">local</column>
+            <column name="url">http://localhost:9080/anotherClient/actuator/refresh</column>
+        </insert>
+
+        <insert tableName="profile">
+            <column name="id" valueComputed="(select pfe_seq.nextval)"/>
+            <column name="clt_id" valueComputed="(SELECT id FROM client WHERE name = 'anotherClient')"/>
+            <column name="name">test</column>
+            <column name="url">http://test.host.com:9080/anotherClient/actuator/refresh</column>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

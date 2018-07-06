@@ -10,7 +10,7 @@
 
     <modules>
         <module>server</module>
-        <module>clientEntity</module>
+        <module>client</module>
         <module>anotherclient</module>
     </modules>
 

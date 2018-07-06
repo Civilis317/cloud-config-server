@@ -24,6 +24,10 @@ public class ClientManager {
         return clientRepository.findById(id);
     }
 
+    public Optional<ClientEntity> findClientByName(String name) {
+        return clientRepository.findByName(name);
+    }
+
     public ClientEntity save(ClientEntity client) {
         return clientRepository.save(client);
     }

@@ -1,4 +1,4 @@
-package nl.playground.cloud.config.server.rest;
+package nl.playground.cloud.config.server.rest.model;
 
 public class KeyValuePair {
     String key;

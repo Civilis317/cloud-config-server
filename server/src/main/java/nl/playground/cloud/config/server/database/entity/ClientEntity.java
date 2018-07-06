@@ -16,6 +16,12 @@ public class ClientEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @Column(name = "public_key_alias", nullable = false)
+    private String publicKeyAlias;
+
+    @Column(name = "public_key_pwd", nullable = false)
+    private String publicKeyPwd;
+
     @OneToMany(mappedBy = "clientEntity", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<ProfileEntity> profileList = new ArrayList<>(10);
 
@@ -49,6 +55,22 @@ public class ClientEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPublicKeyAlias() {
+        return publicKeyAlias;
+    }
+
+    public void setPublicKeyAlias(String publicKeyAlias) {
+        this.publicKeyAlias = publicKeyAlias;
+    }
+
+    public String getPublicKeyPwd() {
+        return publicKeyPwd;
+    }
+
+    public void setPublicKeyPwd(String publicKeyPwd) {
+        this.publicKeyPwd = publicKeyPwd;
     }
 
     public List<ProfileEntity> getProfileList() {

@@ -1,4 +1,6 @@
-package nl.playground.cloud.config.server.rest;
+package nl.playground.cloud.config.server.rest.validation;
+
+import nl.playground.cloud.config.server.rest.http.ClientRequest;
 
 public class RequestValidator {
 

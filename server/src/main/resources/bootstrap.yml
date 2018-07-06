@@ -7,7 +7,7 @@ spring:
 
 encrypt:
   key-store:
-    location: "classpath:/config-server.jks"
+    location: "/public-keys.jks"
     password: "welcome1"
-    alias: "default"
-    secret: "welcome1"
+#    alias: "default"
+#    secret: "welcome1"

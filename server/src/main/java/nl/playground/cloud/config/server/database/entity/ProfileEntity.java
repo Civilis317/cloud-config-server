@@ -14,9 +14,6 @@ public class ProfileEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "public_key")
-    private String publicKey;
-
     @Column(name = "url")
     private String url;
 
@@ -48,14 +45,6 @@ public class ProfileEntity {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPublicKey() {
-        return publicKey;
-    }
-
-    public void setPublicKey(String publicKey) {
-        this.publicKey = publicKey;
     }
 
     public String getUrl() {

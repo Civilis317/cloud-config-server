@@ -1,13 +1,12 @@
-package nl.playground.cloud.config.server.database;
+package nl.playground.cloud.config.server.database.conversion;
 
 import nl.playground.cloud.config.server.database.entity.PropertyEntity;
 import nl.playground.cloud.config.server.database.entity.PropertyId;
-import nl.playground.cloud.config.server.rest.Property;
-import nl.playground.cloud.config.server.rest.PropertyRequest;
+import nl.playground.cloud.config.server.rest.model.Property;
+import nl.playground.cloud.config.server.rest.http.PropertyRequest;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class ConfigConverter {
     public static Property convertEntityToProperty(PropertyEntity entity) {
@@ -40,11 +39,7 @@ public class ConfigConverter {
             property.setProfile(request.getProfile());
             property.setLabel(request.getLabel());
             property.setKey(keyValuePair.getKey());
-            if (keyValuePair.getEncrypt()) {
-                property.setValue(UUID.randomUUID().toString());
-            } else {
-                property.setValue(keyValuePair.getValue());
-            }
+            property.setValue(keyValuePair.getValue());
             resultList.add(property);
         });
         return resultList;

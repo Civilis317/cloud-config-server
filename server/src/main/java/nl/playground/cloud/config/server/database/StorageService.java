@@ -1,12 +1,15 @@
 package nl.playground.cloud.config.server.database;
 
+import nl.playground.cloud.config.server.database.conversion.ClientConverter;
+import nl.playground.cloud.config.server.database.conversion.ConfigConverter;
 import nl.playground.cloud.config.server.database.entity.ClientEntity;
 import nl.playground.cloud.config.server.database.entity.PropertyEntity;
 import nl.playground.cloud.config.server.database.entity.PropertyId;
 import nl.playground.cloud.config.server.database.manager.ClientManager;
 import nl.playground.cloud.config.server.database.manager.PropertyManager;
-import nl.playground.cloud.config.server.rest.Client;
-import nl.playground.cloud.config.server.rest.Property;
+import nl.playground.cloud.config.server.rest.model.Client;
+import nl.playground.cloud.config.server.rest.model.Profile;
+import nl.playground.cloud.config.server.rest.model.Property;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -71,6 +74,15 @@ public class StorageService {
         return returnList;
     }
 
+    public void deleteProperties(List<Property> propertyList) {
+        propertyList.stream().forEach(p -> deleteProperty(p));
+    }
+
+    private void deleteProperty(Property property) {
+        PropertyId id = new PropertyId(property.getApplication(), property.getProfile(), property.getLabel(), property.getKey());
+        propertyManager.delete(id);
+    }
+
     public List<Client> getClientList() {
         try {
             List<Client> resultList = new ArrayList<>(16);
@@ -89,6 +101,40 @@ public class StorageService {
             ClientEntity clientEntity = clientManager.findClientById(id)
                     .orElseThrow(() -> new EntityNotFoundException("Record not found for id: " + String.valueOf(id)));
             return ClientConverter.convertEntityToClient(clientEntity);
+        } catch (EntityNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            throw new StorageException(e.getMessage(), e);
+        }
+    }
+
+    public Client getClient(String name) {
+        try {
+            ClientEntity clientEntity = clientManager.findClientByName(name)
+                    .orElseThrow(() -> new EntityNotFoundException("Record not found for name: " + name));
+            return ClientConverter.convertEntityToClient(clientEntity);
+        } catch (EntityNotFoundException e) {
+            throw e;
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+            throw new StorageException(e.getMessage(), e);
+        }
+    }
+
+    public Client getSpecificProfile(String clientName, String profileName) {
+        try {
+            Client client = getClient(clientName);
+            Profile profile = new Profile();
+            for (Profile p : client.getProfileList()) {
+                if (profileName.equals(p.getName())) {
+                    profile.setName(p.getName());
+                    profile.setUrl(p.getUrl());
+                }
+            }
+            client.getProfileList().clear();
+            client.getProfileList().add(profile);
+            return client;
         } catch (EntityNotFoundException e) {
             throw e;
         } catch (Exception e) {

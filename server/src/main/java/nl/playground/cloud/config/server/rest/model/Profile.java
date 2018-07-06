@@ -1,9 +1,8 @@
-package nl.playground.cloud.config.server.rest;
+package nl.playground.cloud.config.server.rest.model;
 
 public class Profile {
     private Long id;
     private String name;
-    private String publicKey;
     private String url;
 
     // getters and setters
@@ -21,14 +20,6 @@ public class Profile {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getPublicKey() {
-        return publicKey;
-    }
-
-    public void setPublicKey(String publicKey) {
-        this.publicKey = publicKey;
     }
 
     public String getUrl() {

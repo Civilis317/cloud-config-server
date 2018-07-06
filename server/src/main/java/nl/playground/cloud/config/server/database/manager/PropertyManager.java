@@ -28,4 +28,8 @@ public class PropertyManager {
     public PropertyEntity save(PropertyEntity propertyEntity) {
         return repository.save(propertyEntity);
     }
+
+    public void delete(PropertyId id) {
+        repository.findById(id).ifPresent(pe -> repository.delete(pe));
+    }
 }

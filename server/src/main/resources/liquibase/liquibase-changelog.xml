@@ -7,6 +7,6 @@
     <include file="changelog/01-create-properties-table.xml" relativeToChangelogFile="true"/>
     <include file="changelog/02-insert-property-values.xml" relativeToChangelogFile="true"/>
     <include file="changelog/03-create-client-tables.xml" relativeToChangelogFile="true"/>
-
+    <include file="changelog/04-insert-client-data.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

@@ -23,7 +23,7 @@
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d [%p] %C: %m%n</pattern>
+            <pattern>[%p] %d %c %M - %m%n</pattern>
         </encoder>
     </appender>
 

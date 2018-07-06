@@ -60,6 +60,13 @@
         </dependency>
         <!-- end deps for h2 and liquibase -->
 
+        <!-- Provides basic http connectivity -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.3</version>
+        </dependency>
+
 	</dependencies>
 
     <dependencyManagement>

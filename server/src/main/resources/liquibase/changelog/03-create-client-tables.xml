@@ -23,6 +23,12 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="name" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="public_key_alias" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="public_key_pwd" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -37,11 +43,8 @@
             <column name="name" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="public_key" type="varchar(4096)">
-                <constraints nullable="true"/>
-            </column>
             <column name="url" type="varchar(255)">
-                <constraints nullable="true"/>
+                <constraints nullable="false"/>
             </column>
         </createTable>
 
